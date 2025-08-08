@@ -1,14 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import LOGO from "@/public/icons/logo_29d.png";
-import ArrowDown from "@/public/ArrowDown";
+import ArrowDown from "@/public/icons/ArrowDown";
 import HeroPng from "@/public/imgs/img_1_hero.png";
+import InstagramIcon from "@/public/icons/InstagramIcon";
+import TiktokIcon from "@/public/icons/TiktokIcon";
+import FacebookIcon from "@/public/icons/FacebookIon";
+import ThreadIcon from "@/public/icons/ThreadIcon";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 px-6">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 md:px-6">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -50,7 +54,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto py-4 md:py-20 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:justify-between gap-4">
         <div className="w-1/2">
           <div className="">
-            <h1 className="text-4xl tracking-tight font-extrabold text-neutral-900 sm:text-5xl md:text-6xl text-left">
+            <h1 className="text-4xl tracking-tight font-black text-neutral-900 sm:text-5xl md:text-6xl text-left font-darker">
               <span className="block">Hero section của</span>
               <span className="block">29diem.daihoc</span>
             </h1>
@@ -82,7 +86,7 @@ export default function Home() {
       <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-black text-gray-900 sm:text-6xl font-darker">
               Bài viết nổi bật
             </h2>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
@@ -154,7 +158,7 @@ export default function Home() {
       <section id="courses" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-black text-gray-900 sm:text-6xl font-darker">
               Khóa học đang mở
             </h2>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
@@ -221,9 +225,12 @@ export default function Home() {
       <section id="testimonials" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Học viên nói gì về chúng tôi
+            <h2 className="text-3xl font-black text-gray-900 sm:text-6xl font-darker">
+              Vì sao bạn nên chọn chúng mình?
             </h2>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </div>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -276,60 +283,143 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-indigo-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Sẵn sàng bắt đầu hành trình học tập?
-          </h2>
-          <p className="mt-4 text-xl text-indigo-100">
-            Tham gia cùng hơn 10,000 học viên đã thành công
-          </p>
-          <div className="mt-8">
-            <Link href="/dashboard" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-              Đăng ký ngay
-            </Link>
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            {/* Left Section - Large Image Placeholder */}
+            <div className="flex-1">
+              <div className="w-full h-64 lg:h-80 bg-gray-200 rounded-2xl border border-gray-300 flex items-center justify-center">
+                <div className="text-gray-500 text-lg">Image Placeholder</div>
+              </div>
+            </div>
+
+            {/* Right Section - CTA Component */}
+            <div className="flex-1 max-w-md">
+              <div className="bg-white rounded-2xl border-2 border-dashed border-gray-300 p-8">
+                {/* Small Image Placeholder */}
+                <div className="w-full h-32 bg-gray-200 rounded-xl mb-6 flex items-center justify-center">
+                  <div className="text-gray-500 text-sm">Banner Image</div>
+                </div>
+
+                {/* Text Content */}
+                <div className="mb-6">
+                  <p className="text-gray-700 text-left leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  </p>
+                </div>
+
+                {/* Email Input and Button */}
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    placeholder="Email nhận tin tức"
+                    className="flex-1 px-4 py-3 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                  <button className="px-6 py-3 bg-primary text-neutral-950 font-medium rounded-lg hover:bg-primary/80 transition-colors">
+                    Đăng ký
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white text-lg font-semibold mb-4">EduLearn</h3>
-              <p className="text-gray-400">
-                Nền tảng học trực tuyến hàng đầu Việt Nam
-              </p>
+      <footer className="font-inter text-black-footer font-medium">
+        <div className=" mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg p-8">
+            {/* Top Section - Newsletter & Social Media */}
+            <div className="flex flex-col lg:flex-row justify-between items-center mb-8">
+              {/* Left side - Logo & Social */}
+              <div className="flex items-center gap-4 mb-4 lg:mb-0 flex-1">
+                <div>
+                  <Image src={LOGO} alt="logo" width={64} height={64} />                </div>
+                <span className="text-black font-medium">Theo dõi chúng tớ</span>
+                <div className="flex gap-3">
+                  {/* Instagram */}
+                  <InstagramIcon/>
+                  {/* TikTok */}
+                  <TiktokIcon/>
+                  {/* Facebook */}
+                  <FacebookIcon/>
+                  {/* Generic Social */}
+                  <ThreadIcon/>
+                </div>
+              </div>
+
+              {/* Right side - Email Subscription */}
+              <div className="flex gap-3 flex-1">
+                <input
+                  type="email"
+                  placeholder="Email nhận tin tức"
+                  className="px-4 py-3 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent flex-1"
+                />
+                <button className="px-6 py-3 md:px-16 bg-primary text-neutral-950 font-medium rounded-lg hover:bg-primary/80 transition-colors">
+                  Đăng ký
+                </button>
+              </div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Khóa học</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Lập trình</a></li>
-                <li><a href="#" className="hover:text-white">Marketing</a></li>
-                <li><a href="#" className="hover:text-white">Design</a></li>
-                <li><a href="#" className="hover:text-white">Business</a></li>
-              </ul>
+
+            {/* Middle Section - Contact & Navigation */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 ">
+              {/* Left Column - Contact Information */}
+              <div>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-black mb-2">Địa chỉ:</h4>
+                  <p className="text-black">Phường Từ Sơn, Thành phố Bắc Ninh</p>
+                  <p className="text-black">123 Tòa nhà AhBC Phường Cầu Giấy, Thành phố Hà Nội</p>
+                </div>
+                <div className="md:flex md:gap-16">
+                  <div>
+                    <h4 className="font-semibold text-black mb-2">Liên hệ:</h4>
+                    <p className="text-black">0123 456 789</p>
+                  </div>
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-black mb-2">Email:</h4>
+                    <p className="text-black">29diem.daihoc@gmail.com</p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right Column - Email & Navigation */}
+              <div>
+                <div className="flex justify-between gap-8">
+                  <div>
+                    <ul className="space-y-4">
+                      <li><a href="#" className="text-black hover:text-gray-600">Blogs</a></li>
+                      <li><a href="#" className="text-black hover:text-gray-600">Video</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul className="space-y-4">
+                      <li><a href="#" className="text-black hover:text-gray-600">Khóa học</a></li>
+                      <li><a href="#" className="text-black hover:text-gray-600">Thi thử</a></li>
+                    </ul>
+
+                  </div>
+                  <div>
+                    <ul className="space-y-4">
+                      <li><a href="#" className="text-black hover:text-gray-600">Donate</a></li>
+                      <li><a href="#" className="text-black hover:text-gray-600">Về chúng tôi</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Hỗ trợ</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Trung tâm trợ giúp</a></li>
-                <li><a href="#" className="hover:text-white">Liên hệ</a></li>
-                <li><a href="#" className="hover:text-white">FAQ</a></li>
-              </ul>
+
+            {/* Bottom Section - Copyright & Legal */}
+            <div className="pt-6 border-t border-gray-200">
+              <div className="w-fit mx-auto flex flex-col lg:flex-row justify-between items-center gap-8 font-inter">
+                <div className="text-black mb-2 lg:mb-0">
+                  Copyright 2025 © 29diemdaihoc
+                </div>
+                <a href="#" className="hover:text-gray-600">Điều khoản</a>
+                <a href="#" className="hover:text-gray-600">Chính sách</a>
+                <a href="#" className="hover:text-gray-600">Phương thức thanh toán</a>
+              </div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Theo dõi</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Facebook</a></li>
-                <li><a href="#" className="hover:text-white">YouTube</a></li>
-                <li><a href="#" className="hover:text-white">LinkedIn</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>&copy; 2024 EduLearn. Tất cả quyền được bảo lưu.</p>
           </div>
         </div>
       </footer>
