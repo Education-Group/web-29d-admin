@@ -54,8 +54,8 @@ jobs:
             # Stop the application if it's running with PM2
             pm2 stop web-29d-admin || true
 
-            # Clean existing deployment
-            rm -rf /var/www/web-29d-admin/*
+            # Clean existing deployment but keep node_modules
+            find /var/www/web-29d-admin -maxdepth 1 -not -name 'node_modules' -not -name '.' -not -name '..' -exec rm -rf {} \;
 
       - name: Copy deployment package to VPS
         uses: appleboy/scp-action@v0.1.7
@@ -84,6 +84,15 @@ jobs:
             # Set proper permissions
             sudo chown -R $USER:$USER /var/www/web-29d-admin
             sudo chmod -R 755 /var/www/web-29d-admin
+
+            # Install dependencies only if needed
+            if [ ! -d "node_modules" ] || [ "package.json" -nt "node_modules" ]; then
+              echo "Installing dependencies..."
+              npm ci --only=production
+              npm install typescript
+            else
+              echo "Dependencies already installed, skipping..."
+            fi
 
             # Start the application with PM2
             pm2 start ecosystem.config.js
