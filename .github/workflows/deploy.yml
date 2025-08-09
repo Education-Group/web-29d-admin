@@ -85,8 +85,13 @@ jobs:
             sudo chown -R $USER:$USER /var/www/web-29d-admin
             sudo chmod -R 755 /var/www/web-29d-admin
 
-            # Install only TypeScript in dev
-            npm install --save-dev typescript
+            # Copy node_modules from /var/www if it exists
+            if [ -d "/var/www/node_modules" ]; then
+              echo "Copying node_modules from /var/www..."
+              cp -r /var/www/node_modules /var/www/web-29d-admin/
+            else
+              echo "No node_modules found in /var/www"
+            fi
 
             # Start the application with PM2
             pm2 start ecosystem.config.js
