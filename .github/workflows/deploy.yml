@@ -31,6 +31,11 @@ jobs:
           mkdir -p deployment
           cp -r .next deployment/
           cp -r public deployment/
+          cp package.json deployment/
+          cp package-lock.json deployment/
+          cp next.config.ts deployment/
+          cp -r app deployment/
+          cp -r types deployment/
           cp ecosystem.config.js deployment/
           tar -czf deployment.tar.gz -C deployment .
 
