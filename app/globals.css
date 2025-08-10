@@ -17,10 +17,14 @@
   
   /* Primary Colors */
   --color-primary: #FAAC2D;
+  --color-primary-600:#D86207;
   --color-neutral-950:#010101;
   --color-neutral-900:#3D3D3D;
+  --color-neutral-800: #454545;
   --color-neutral-500:#6D6D6D;
+  --color-neutral-400:#888888;
   --color-neutral-100:#E7E7E7;
+  --color-neutral-50:#F6F6F6;
   --color-black-footer: #010206;
 }
 

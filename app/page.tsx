@@ -40,7 +40,7 @@ export default function Home() {
                 <Link href="/dashboard" className="border border-neutral-100 text-neutral-950 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200">
                   Đăng nhập
                 </Link>
-                <Link href="/dashboard" className="bg-primary text-neutral-950 px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/80">
+                <Link href="/signup" className="bg-primary text-neutral-950 px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/80">
                   Đăng ký
                 </Link>
 
