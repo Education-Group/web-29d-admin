@@ -1,90 +1,27 @@
 'use client'
 import FacebookBlueIcon from '@/public/icons/FacebookBlueIcon'
 import GoogleIcon from '@/public/icons/GoogleIcon'
-import React, { useState, useEffect } from 'react'
-import { handleSuccessfulAuth } from '@/lib/auth'
+import React from 'react'
+import { useSignupForm } from './useSignupForm'
 
 export default function Signup() {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    })
-    const [passwordValidation, setPasswordValidation] = useState({
-        minLength: false,
-        hasUpperCase: false,
-        hasLowerCase: false,
-        hasNumber: false,
-        hasSpecialChar: false
-    })
-    const [showPassword, setShowPassword] = useState(false)
-    const [hasStartedTyping, setHasStartedTyping] = useState(false)
-
-    const validatePassword = (password: string) => {
-        const validations = {
-            minLength: password.length >= 8,
-            hasUpperCase: /[A-Z]/.test(password),
-            hasLowerCase: /[a-z]/.test(password),
-            hasNumber: /\d/.test(password),
-            hasSpecialChar: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)
-        }
-        setPasswordValidation(validations)
-        return Object.values(validations).every(Boolean)
-    }
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-
-        if (name === 'password') {
-            if (!hasStartedTyping && value.length > 0) {
-                setHasStartedTyping(true)
-            }
-            validatePassword(value)
-        }
-    }
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        const isPasswordValid = validatePassword(formData.password)
-        
-        if (!isPasswordValid) {
-            alert('Vui lòng kiểm tra lại yêu cầu mật khẩu!')
-            return
-        }
-        
-        try {
-            // TODO: Gọi API đăng ký thực tế
-            // const response = await fetch('/api/auth/signup', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(formData)
-            // })
-            // const data = await response.json()
-            
-            // Tạm thời tạo mock token và user data
-            const mockToken = 'mock-jwt-token-' + Date.now()
-            const mockUserData = { email: formData.email, name: formData.email.split('@')[0] }
-            
-            // Xử lý đăng ký thành công
-            handleSuccessfulAuth(mockToken, mockUserData)
-            
-        } catch (error) {
-            console.error('Signup error:', error)
-            alert('Có lỗi xảy ra khi đăng ký!')
-        }
-    }
-
-    const isPasswordValid = Object.values(passwordValidation).every(Boolean)
+    const {
+        formData,
+        handleInputChange,
+        passwordValidation,
+        showPassword,
+        setShowPassword,
+        hasStartedTyping,
+        isPasswordValid,
+        handleSubmit,
+    } = useSignupForm()
 
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className='max-w-2xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='text-center'>
-                    <p className='font-black text-6xl font-darker leading-12'>Đăng ký tài khoản</p>
-                    <p className='text-neutral-500 mt-2'>Đăng ký trở thành thành viên ngay hôm nay để không bỏ lỡ thông tin về đề thi THPTQG môn Toán</p>
+                    <p className='font-black text-6xl font-darker'>Đăng ký tài khoản</p>
+                    <p className='text-neutral-500 mt-4'>Đăng ký trở thành thành viên ngay hôm nay để không bỏ lỡ thông tin về đề thi THPTQG môn Toán</p>
                 </div>
                 <div className='mt-6'>
                     <form onSubmit={handleSubmit}>
@@ -176,7 +113,7 @@ export default function Signup() {
                                 disabled={!isPasswordValid}
                                 className={`w-full p-4 font-inter font-medium text-xl outline-none rounded-xl transition-colors ${
                                     isPasswordValid 
-                                        ? 'bg-primary text-white hover:bg-[#d9911f]' 
+                                        ? 'bg-primary text-white hover:bg-[#d9911f]'
                                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                 }`}
                             >
