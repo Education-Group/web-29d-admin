@@ -5,7 +5,6 @@ import ArrowDown from "@/public/icons/ArrowDown";
 import HeroPng from "@/public/imgs/img_1_hero.png";
 import InstagramIcon from "@/public/icons/InstagramIcon";
 import TiktokIcon from "@/public/icons/TiktokIcon";
-import FacebookIcon from "@/public/icons/FacebookIon";
 import ThreadIcon from "@/public/icons/ThreadIcon";
 
 export default function Home() {
@@ -341,8 +340,6 @@ export default function Home() {
                   <InstagramIcon/>
                   {/* TikTok */}
                   <TiktokIcon/>
-                  {/* Facebook */}
-                  <FacebookIcon/>
                   {/* Generic Social */}
                   <ThreadIcon/>
                 </div>

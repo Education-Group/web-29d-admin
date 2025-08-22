@@ -1,6 +1,4 @@
 'use client'
-import FacebookBlueIcon from '@/public/icons/FacebookBlueIcon'
-import GoogleIcon from '@/public/icons/GoogleIcon'
 import React from 'react'
 import { useSignupForm } from './useSignupForm'
 
@@ -124,28 +122,7 @@ export default function Signup() {
                             <span  className='text-neutral-500 font-medium'>Đã có tài khoản?</span>&nbsp;
                             <a href="" className='text-primary-600 font-bold'>Đăng nhập</a>
                         </div>
-                        <div className="flex items-center my-6">
-                            <div className="flex-grow h-px bg-neutral-200"></div>
-                            <span className="mx-4 text-neutral-500 font-medium text-lg">hoặc</span>
-                            <div className="flex-grow h-px bg-neutral-200"></div>
-                        </div>
                     </form>
-                <button
-                    type="button"
-                    className="cursor-pointer w-full flex items-center justify-center gap-3 p-4 mb-4 border border-neutral-200 rounded-xl bg-white hover:bg-neutral-50 transition-colors"
-                >
-                    <GoogleIcon/>
-                    <span className="font-inter text-neutral-800 text-lg font-medium">Tiếp tục với Google</span>
-                </button>
-
-                <button
-                    type="button"
-                    className="cursor-pointer w-full flex items-center justify-center gap-3 p-4 mb-4 border border-neutral-200 rounded-xl bg-white hover:bg-neutral-50 transition-colors"
-                >
-                    <FacebookBlueIcon/>
-                    <span className="font-inter text-neutral-800 text-lg font-medium">Tiếp tục với Facebook</span>
-                </button>
-
                 </div>
             </div>
         </div>

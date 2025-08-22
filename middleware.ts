@@ -11,9 +11,7 @@ export function middleware(request: NextRequest) {
   const isStrictPrivateRoute = strictPrivateRoutes.some(route => pathname.startsWith(route))
   
   // Kiểm tra authentication status
-  const isAuthenticated = request.cookies.has('auth-token') || 
-                         request.cookies.has('next-auth.session-token') ||
-                         request.cookies.has('__Secure-next-auth.session-token')
+  const isAuthenticated = request.cookies.has('auth-token')
   
   // Chỉ redirect nếu là strict private route và chưa đăng nhập
   if (isStrictPrivateRoute && !isAuthenticated) {
