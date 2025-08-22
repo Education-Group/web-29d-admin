@@ -17,6 +17,12 @@ export function middleware(request: NextRequest) {
   if (isStrictPrivateRoute && !isAuthenticated) {
     return NextResponse.redirect(new URL('/signup', request.url))
   }
+
+  if(isAuthenticated && pathname.includes('/login')) {
+    return NextResponse.redirect(new URL('/', request.url))
+  }  if(isAuthenticated && pathname.includes('/signup')) {
+    return NextResponse.redirect(new URL('/', request.url))
+  }
   
   return NextResponse.next()
 }
