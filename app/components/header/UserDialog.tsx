@@ -16,8 +16,9 @@ import { User } from "lucide-react"
 type UserDialogProps = {
   name: string
   email: string
+  level: string
 }
-export function UserDialog({ name, email }: UserDialogProps) {
+export function UserDialog({ name, email, level }: UserDialogProps) {
   const handleLogout = async () => {
     const response = await fetch('/api/auth/logout', {
       method: 'POST',
@@ -37,20 +38,21 @@ export function UserDialog({ name, email }: UserDialogProps) {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
+            <DialogTitle className="text-center">Thông tin cá nhân</DialogTitle>
+
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
+              <Label htmlFor="name-1">Tên</Label>
               <Input disabled id="name-1" name="name" defaultValue={name} />
             </div>
             <div className="grid gap-3">
               <Label htmlFor="username-1">Email</Label>
               <Input disabled id="username-1" name="username" defaultValue={email} />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="level-1">Level</Label>
+              <Input disabled id="level-1" name="level" defaultValue={level} />
             </div>
           </div>
           <DialogFooter>

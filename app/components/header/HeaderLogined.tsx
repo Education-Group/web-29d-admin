@@ -10,7 +10,7 @@ export default async function HeaderLogined() {
   const cookieStore = await cookies()
   const name = cookieStore.get('name')?.value || ''
   const email = cookieStore.get('email')?.value || ''
-
+  const level = cookieStore.get('userLevel')?.value || ''
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 md:px-6">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export default async function HeaderLogined() {
 
           </div>
           <div className="hidden md:block">
-            <UserDialog name={name} email={email} />
+            <UserDialog name={name} email={email} level={level} />
           </div>
         </div>
       </div>
