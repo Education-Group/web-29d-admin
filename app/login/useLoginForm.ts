@@ -42,6 +42,7 @@ export function useLoginForm() {
         setShowPassword,
         handleSubmit,
         isPending: loginMutation.isPending,
+        isSuccess: loginMutation.isSuccess,
     }
 }
 

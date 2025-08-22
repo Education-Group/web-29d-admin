@@ -11,13 +11,14 @@ export default function Login() {
         setShowPassword,
         handleSubmit,
         isPending,
+        isSuccess,
     } = useLoginForm()
 
 
     const isActiveForm = formData.email && formData.password
 
     if (isPending) return <Loading/>
-
+    if (isSuccess) return <div></div>
     return (
         <div className='flex justify-center items-center h-screen px-4'>
             <div className='w-full mx-auto transform lg:-translate-y-1/2 lg:max-w-2xl'>
