@@ -77,7 +77,7 @@ export default function Login() {
                         </div>
                         <div className='mt-6 text-center text-lg'>
                             <span  className='text-neutral-500 font-medium'>Chưa có tài khoản?</span>&nbsp;
-                            <a href="" className='text-primary-600 font-bold'>Đăng ký</a>
+                            <a href="/signup" className='text-primary-600 font-bold'>Đăng ký</a>
                         </div>
                     </form>
                 </div>
