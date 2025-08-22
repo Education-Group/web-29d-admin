@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useSignup } from '@/lib/hooks/useSignup'
+import { useRouter } from 'next/navigation'
 
 type FormData = {
     email: string
@@ -16,6 +17,7 @@ type PasswordValidation = {
 }
 
 export function useSignupForm() {
+    const router = useRouter()
     const [formData, setFormData] = useState<FormData>({ email: '', password: '' })
     const [passwordValidation, setPasswordValidation] = useState<PasswordValidation>({
         minLength: false,
@@ -59,7 +61,7 @@ export function useSignupForm() {
             return
         }
         localStorage.setItem('temp-register', JSON.stringify({ email: formData.email, password: formData.password }))
-        window.location.href = '/welcome'
+        router.push('/signup/welcome?tab=name')
         // await signupMutation.mutateAsync({ email: formData.email, password: formData.password })
     }
 

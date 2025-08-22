@@ -6,48 +6,14 @@ import HeroPng from "@/public/imgs/img_1_hero.png";
 import InstagramIcon from "@/public/icons/InstagramIcon";
 import TiktokIcon from "@/public/icons/TiktokIcon";
 import ThreadIcon from "@/public/icons/ThreadIcon";
+import Header from "./components/header/Header";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <div className="min-h-screen bg-gradient-to-br">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 md:px-6">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <Image src={LOGO} alt="logo" width={64} height={64} />
-              </div>
-              <a href="#features" className="neutral-950 hover:text-primary/80 px-3 py-2 rounded-md text-xl font-medium flex items-center">
-                Trang chủ
-              </a>
-              <a href="#courses" className="neutral-950 hover:text-primary/80 px-3 py-2 rounded-md text-xl font-medium">Blog</a>
-              <a href="#testimonials" className="neutral-950 hover:text-primary/80 px-3 py-2 rounded-md text-xl font-medium">Video</a>
-              <a href="#testimonials" className="neutral-950 hover:text-primary/80 px-3 py-2 rounded-md text-xl font-medium flex items-center gap-2">
-                Khoá học
-                <ArrowDown width={10} height={6} />
-              </a>
-              <a href="#testimonials" className="neutral-950 hover:text-primary/80 px-3 py-2 rounded-md text-xl font-medium flex items-center gap-2">
-                Thi thử
-                <ArrowDown width={10} height={6} />
-
-              </a>
-
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link href="/dashboard" className="border border-neutral-100 text-neutral-950 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200">
-                  Đăng nhập
-                </Link>
-                <Link href="/signup" className="bg-primary text-neutral-950 px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/80">
-                  Đăng ký
-                </Link>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto py-4 md:py-20 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:justify-between gap-4">

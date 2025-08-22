@@ -58,6 +58,22 @@ export async function POST(request: NextRequest) {
       maxAge: 60 * 60 * 24 * 7
     })
 
+    response.cookies.set('name', name, {
+      httpOnly: false,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+    })
+
+    response.cookies.set('email', email, {
+      httpOnly: false,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+    })
+
     return response
   } catch (error) {
     console.error('Signup proxy error:', error)
