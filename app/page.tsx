@@ -7,6 +7,7 @@ import InstagramIcon from "@/public/icons/InstagramIcon";
 import TiktokIcon from "@/public/icons/TiktokIcon";
 import ThreadIcon from "@/public/icons/ThreadIcon";
 import Header from "./components/header/Header";
+import Courses from "./components/course/Courses";
 
 export default async function Home() {
 
@@ -120,71 +121,7 @@ export default async function Home() {
       </section>
 
       {/* Courses Section */}
-      <section id="courses" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-black text-gray-900 sm:text-6xl font-darker">
-              Khóa học đang mở
-            </h2>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Khám phá các khóa học được yêu thích nhất
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Course Card 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-purple-500">
-                <img className="h-full w-full object-cover" src="https://images.squarespace-cdn.com/content/v1/5acbdd3a25bf024c12f4c8b4/1591636644294-TK0UEU88NLWMB1XX1CPX/Linear+Algebra+Example.jpg" alt="" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Đại số</h3>
-                <p className="mt-2 text-gray-600">Học Vector, Ma trận, Không gian vector, hệ phương trình tuyến tính,...</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-2xl font-bold text-indigo-600">2.500.000đ</span>
-                  <span className="text-sm text-gray-500">4.8 ⭐ (1.2k đánh giá)</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Course Card 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500">
-                <img className="h-full w-full object-cover" src="https://continuinged.utah.edu/_resources/images/_d1/anc/featured-images/math121.jpg" alt="" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Giải tích I</h3>
-                <p className="mt-2 text-gray-600">Hàm số, giới hạn, đạo hàm, tích phân, hàm nhiều biến,...</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-2xl font-bold text-indigo-600">3.200.000đ</span>
-                  <span className="text-sm text-gray-500">4.9 ⭐ (856 đánh giá)</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Course Card 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-pink-400 to-red-500">
-                <img className="h-full w-full object-cover" src="https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/a5490d4c7f91.jpg" alt="" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Giải tích II</h3>
-                <p className="mt-2 text-gray-600">Chuỗi số, chuỗi hàm, chuỗi lũy thừa, chuỗi Fourier, phương trình vi phân,...</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-2xl font-bold text-indigo-600">1.800.000đ</span>
-                  <span className="text-sm text-gray-500">4.7 ⭐ (634 đánh giá)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link href="/dashboard" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/80">
-              Xem tất cả khóa học
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Courses />
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 bg-white">

@@ -17,7 +17,7 @@ export default function Login() {
 
     const isActiveForm = formData.email && formData.password
 
-    if (isPending) return <Loading/>
+    if (isPending) return <Loading />
     if (isSuccess) return <div></div>
     return (
         <div className='flex justify-center items-center h-screen px-4'>
@@ -30,25 +30,25 @@ export default function Login() {
                     <form onSubmit={handleSubmit}>
                         <div className='grid grid-cols-1 gap-8'>
                             <div className='flex flex-col gap-2'>
-                                <input 
-                                    type='email' 
+                                <input
+                                    type='email'
                                     name="email"
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    placeholder='Email' 
-                                    className='p-4 font-inter font-medium text-xl outline-none bg-neutral-50 text-neutral-400 rounded-xl' 
+                                    placeholder='Email'
+                                    className='p-4 font-inter font-medium text-xl outline-none bg-neutral-50 text-neutral-400 rounded-xl'
                                     required
                                 />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <div className='relative'>
-                                    <input 
-                                        type={showPassword ? 'text' : 'password'} 
+                                    <input
+                                        type={showPassword ? 'text' : 'password'}
                                         name="password"
                                         value={formData.password}
                                         onChange={handleInputChange}
-                                        placeholder='Mật khẩu' 
-                                        className='p-4 font-inter font-medium text-xl outline-none bg-neutral-50 text-neutral-400 rounded-xl w-full pr-12' 
+                                        placeholder='Mật khẩu'
+                                        className='p-4 font-inter font-medium text-xl outline-none bg-neutral-50 text-neutral-400 rounded-xl w-full pr-12'
                                         required
                                     />
                                     <button
@@ -63,20 +63,19 @@ export default function Login() {
                         </div>
 
                         <div className='mt-6'>
-                            <button 
+                            <button
                                 type="submit"
                                 disabled={!isActiveForm}
-                                className={`w-full p-4 font-inter font-medium text-xl outline-none rounded-xl transition-colors ${
-                                    isActiveForm 
+                                className={`w-full p-4 font-inter font-medium text-xl outline-none rounded-xl transition-colors ${isActiveForm
                                         ? 'bg-primary text-white hover:bg-[#d9911f]'
                                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                }`}
+                                    }`}
                             >
                                 Đăng nhập
                             </button>
                         </div>
                         <div className='mt-6 text-center text-lg'>
-                            <span  className='text-neutral-500 font-medium'>Chưa có tài khoản?</span>&nbsp;
+                            <span className='text-neutral-500 font-medium'>Chưa có tài khoản?</span>&nbsp;
                             <a href="/signup" className='text-primary-600 font-bold'>Đăng ký</a>
                         </div>
                     </form>
